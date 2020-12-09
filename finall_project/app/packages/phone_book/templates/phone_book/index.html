@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+    <title>Index Page</title>
+</head>
+<body style="background-color: darkgray;">
+    <div style="display: flex;margin-top:30px;" class="container" >
+        <div  style="margin-top: 30px;margin-left: 25%;" >
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                    <th>Family</th>
+                    <th>Phone Number</th>
+                </thead>
+                <tbody>
+                    {% for item in contacts %}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.family}}</td>
+                        <td>{{item.phone_number}}</td>
+                        <td><a href="/edit-user/{{item.id}}" ><button class="btn btn-primary">Edit</button></a></td>
+                        <td><a href="/delete-user/{{item.id}}" ><button class="btn btn-danger">Delete</button></a></td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+        <div  style="margin-top: 50px;margin-left: 30px;" >
+            <a class="btn btn-primary" href="/add-user">Add New User</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body  style="background-color: darkgray;" >
+    <div class="container" style="background-color: darkgray;margin: 50px;">
+        <form method="POST" class="container">
+            {{ form.hidden_tag() }}
+            <div class="form-group" >
+                {{ form.name.label }}
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                {{ form.family.label }}
+                {{ form.family }}
+            </div>
+            <div class="form-group">
+                {{ form.phone_number.label }}	
+                {{ form.phone_number }}
+            </div class="form-group" >
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    </div>
+  
+</body>
+</html>
